@@ -1,5 +1,5 @@
 # TVapp
-TV website for check shows for children to watch
+Website that screens TV shows for children to watch
 
 Instructions for running app:
 
