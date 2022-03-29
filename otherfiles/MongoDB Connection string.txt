@@ -1,1 +1,0 @@
-mongodb+srv://soshilaja:nwULuSa6w7w8hMh@cluster0.sbbg6.mongodb.net/Projectjoey?retryWrites=true&w=majority
