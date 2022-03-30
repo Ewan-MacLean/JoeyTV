@@ -6,7 +6,7 @@ const userCommentsSchema = new mongoose.Schema({
   movieTitle: String,
   review: String,
   rating: Number,
-  ages: [String],
+  ages: Array,
 });
 
 const UserComments = mongoose.model("UserComments", userCommentsSchema);
