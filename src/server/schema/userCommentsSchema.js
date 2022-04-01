@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userCommentsSchema = new mongoose.Schema({
-    _id: {},
-    showId: Number,
-    userId: Number,
-    userComment: String,
-    userRating: Number
-    
-})
+  showId: Number,
+  userId: String,
+  movieTitle: String,
+  review: String,
+  rating: Number,
+  ages: [String],
+});
 
-const UserComments = mongoose.model('UserComments', userCommentsSchema);
+const UserComments = mongoose.model("UserComments", userCommentsSchema);
 
 module.exports = UserComments;

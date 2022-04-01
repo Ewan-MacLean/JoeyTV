@@ -1,9 +1,13 @@
-const express = require('express');
+const express = require("express");
 
-const getUserComments = require('../controllers/userCommentsController')
+const {
+  getUserComments,
+  postUserComments,
+} = require("../controllers/userCommentsController");
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getUserComments)
+router.get("/", getUserComments);
+router.post("/", postUserComments);
 
 module.exports = router;

@@ -1,10 +1,21 @@
 const Movies = require("../schema/movieSchema");
 
-const getMovies = async (req, res) => {
+const getMoviesById = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  const movies = await Movies.find();
-  console.log(movies);
+  console.dir(req.params);
+
+  const movies = await Movies.find({ id: req.params.id });
+  // console.log(movies);
   res.json(movies);
 };
 
-module.exports = getMovies;
+const getMovies = async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  console.dir(req.params);
+
+  const movies = await Movies.find().limit(25);
+  // console.log(movies);
+  res.json(movies);
+};
+
+module.exports = { getMovies, getMoviesById };
