@@ -1,5 +1,5 @@
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const ShowCard = function(props){
     return(

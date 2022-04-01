@@ -1,10 +1,13 @@
-import ShowCard from '../ShowCard/showCard'
+import ShowCard from '../ShowCard/showCard';
 
-const ShowList = function(props){
+const ShowList = function({ showData, loading}){
+    if(loading){
+        return <h2>Loading...</h2>
+    };
     return(
         <div>
             {
-                props.showData.map(
+                showData.map(
                     x=>(
                         <div key={x.id}>
                             <ShowCard name={x.name} rating={x.rating.average} image={x.image.medium} summary={x.summary}/>
@@ -13,7 +16,7 @@ const ShowList = function(props){
                 )
             }
         </div>
-    )
+    );
 };
 
 export default ShowList;
