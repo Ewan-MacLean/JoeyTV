@@ -2,6 +2,7 @@
 // import ShowContext from '../Context/show-context';
 // import { useApi } from '../Context/show-context';
 import { Figure, ProgressBar, Button, Card } from 'react-bootstrap';
+import StarRating from '../../StarRating';
 
 const CompiledInfo = function (props) {
     // const data = require('./894.json')
@@ -20,8 +21,10 @@ const CompiledInfo = function (props) {
 
 
     return (
-        <div>
-            <h1>{data.name}</h1>
+        <Card>
+        {data && (
+       <div>
+            <h1>{data.name} </h1>   
             <Figure>
                 <Figure.Image
                     src={data.image.medium} />
@@ -30,15 +33,15 @@ const CompiledInfo = function (props) {
                 </Figure.Caption>
             </Figure>
             <div>
-                {summaryData? summaryData.ages.map(age => (
+                Recommended ages:
+                {summaryData? summaryData.ages.sort((a,b)=>a-b).map(age => (
                     <Button variant="light" key={age} >{age}</Button>
                 )): ''}
             </div>
             <div>
                 Show Rate
-                <ProgressBar
-                    now={(summaryData.rating) * 10}
-                />
+                <StarRating score={summaryData.rating} />
+                 
             </div>
             <Card body>
                 {(data.summary.replace(/<p[^>]*>/g, '').replace(/<b>/g, '').replace(/<\/b>/g, ''))}
@@ -54,6 +57,8 @@ const CompiledInfo = function (props) {
                 </div>
             </div>
         </div>
+        )}
+        </Card>
     )
 }
 

@@ -75,9 +75,9 @@ function Detail(showId) {
         for (let c of comments) {
           if (c.ages) {
             for (let a of c.ages) {
-              if (!compiledData.ages.includes(a)) { compiledData.ages.push(a) }
+              if (!compiledData.ages.includes(a)) { compiledData.ages.push(a) 
+              }
             }
-
           }
         }
         // console.log(compiledData.ages)

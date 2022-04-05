@@ -1,6 +1,5 @@
-import { findByLabelText } from '@testing-library/react';
 import { Button, Card, ProgressBar } from 'react-bootstrap';
-// import { FaStar } from "react-icons/fa";
+import StarRating from '../../StarRating';
 
 const SingleReview = function (props) {
     console.log(props.props)
@@ -12,13 +11,8 @@ const SingleReview = function (props) {
             {reviews.map(rev => (
                 <Card key={rev.userId}>
                     <Card.Title>
-                        {/* <FaStar
-                            key={rev.rating}
-                            className="cursor-pointer"
-                            icon="fas fa-star"
-                            onClick={() => onRating(index)}
-                            style={{ color: getColor(index) }}
-                        /> */}
+                        <StarRating score={rev.rating} />
+
                     </Card.Title>
                     <Card.Text>{rev.review}</Card.Text>
                     <div>{rev.tags.map(tag => (
