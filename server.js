@@ -3,7 +3,7 @@ const connectToDatabase = require("./db");
 const app = express();
 const multer = require("multer");
 const upload = multer();
-require("dotenv").config();
+require("dotenv").config({path: "./src/server/.env"});
 const mongoose = require("mongoose");
 const moviesRoutes = require("./routes/moviesRoutes");
 const userCommentsRoutes = require("./routes/userCommentsRoutes");

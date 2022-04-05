@@ -1,7 +1,7 @@
 import './Detail.css';
-import CompiledInfo from '../Components/compiled-info';
-import Reviews from '../Components/reviews';
-import CompleteTags from '../Components/complete-tags';
+import CompiledInfo from '../Components/Details/compiled-info';
+import Reviews from '../Components/Details/reviews';
+import CompleteTags from '../Components/Details/complete-tags';
 import { useEffect, useState } from 'react';
 
 function Detail(showId) {

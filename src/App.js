@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import MyNavbar from './components/myNavbar/navbar';
 import ShowList from './components/ShowList/showList';
 import Pagination from './components/Pagination/pagination';
+import Detail from './components/Views/Detail';
 
 function App() {
   const [data,setData] = useState([]);
@@ -38,6 +39,7 @@ function App() {
         totalPosts={data.length} 
         paginate={paginate}
         />
+        <Detail/>
       </Container>
     </div>
   );

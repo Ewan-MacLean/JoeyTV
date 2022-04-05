@@ -1,6 +1,6 @@
 import { findByLabelText } from '@testing-library/react';
 import { Button, Card, ProgressBar } from 'react-bootstrap';
-// import { FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const SingleReview = function (props) {
     console.log(props.props)

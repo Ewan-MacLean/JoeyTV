@@ -1,5 +1,6 @@
 import ProgressBar from "react-bootstrap/ProgressBar"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Card} from 'bootstrap/dist/css/bootstrap.min.css'
 
 const CompleteTags = function (props) {
     // const summaryData = require('./894summary.json')
@@ -17,11 +18,11 @@ const CompleteTags = function (props) {
 
 
     return (
-        <div>
-            <h2>All tags</h2>
-            <div>{items}</div>
+        <Card>
+            <Card.Header as="h2">All tags</Card.Header>
+            <Card.Text>{items}</Card.Text>
 
-        </div>
+        </Card>
     )
 }
 
