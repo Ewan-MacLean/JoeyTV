@@ -31,16 +31,17 @@ function App() {
 
   return (
     <div className="App">
-      <MyNavbar/>
+      {/* <MyNavbar/>
       <Container>
         <ShowList showData={currentPosts} loading={loading}/>
         <Pagination 
         postsPerPage={postsPerPage} 
         totalPosts={data.length} 
         paginate={paginate}
-        />
-        <Detail/>
-      </Container>
+        /> */}
+        <Detail showId="691"/>
+        Inside App
+      {/* </Container> */}
     </div>
   );
 };

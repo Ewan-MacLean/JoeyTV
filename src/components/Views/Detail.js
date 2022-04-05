@@ -1,7 +1,7 @@
 import './Detail.css';
-import CompiledInfo from '../Components/Details/compiled-info';
-import Reviews from '../Components/Details/reviews';
-import CompleteTags from '../Components/Details/complete-tags';
+import CompiledInfo from './Details/compiled-info';
+import Reviews from './Details/reviews';
+import CompleteTags from './Details/complete-tags';
 import { useEffect, useState } from 'react';
 
 function Detail(showId) {
@@ -31,7 +31,7 @@ function Detail(showId) {
       .then((allComments) => {
         let filteredComments = allComments.filter(comment => ( comment.showId == showId))
         // Record all reviews on raw variable
-        // setRawReviews(filteredComments);
+        setRawReviews(filteredComments);
 
         // TBD temporary comments to test rendering. Replace it.
         let comments = [{
@@ -141,7 +141,8 @@ function Detail(showId) {
     //   </div>
     // </APIContextProvider>
 
-    <div className="App">
+    <div>
+Inside Detail
       {/* <ShowData data={[publicData, rawReviews, computedData]} /> */}
       <CompiledInfo props={[publicData, rawReviews, computedData]}/>
       <Reviews props={[publicData, rawReviews, computedData]}/>

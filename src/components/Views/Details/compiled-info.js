@@ -1,13 +1,13 @@
 // import { useContext } from 'react';
 // import ShowContext from '../Context/show-context';
-import { useApi } from '../Context/show-context';
+// import { useApi } from '../Context/show-context';
 import { Figure, ProgressBar, Button, Card } from 'react-bootstrap';
 
 const CompiledInfo = function (props) {
-    const data = require('./894.json')
-    // const data = props.props[0][0];
-    const summaryData = require('./894summary.json')
-    // const summaryData = props.props[2];
+    // const data = require('./894.json')
+    const data = props.props[0][0];
+    // const summaryData = require('./894summary.json')
+    const summaryData = props.props[2];
     
     const saveFavorite = function () {
         alert('Saving favorite TBD')
@@ -30,9 +30,9 @@ const CompiledInfo = function (props) {
                 </Figure.Caption>
             </Figure>
             <div>
-                {summaryData.ages.map(age => (
+                {summaryData? summaryData.ages.map(age => (
                     <Button variant="light" key={age} >{age}</Button>
-                ))}
+                )): ''}
             </div>
             <div>
                 Show Rate
