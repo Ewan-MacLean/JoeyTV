@@ -2,7 +2,6 @@ import { Button, Card, ProgressBar } from 'react-bootstrap';
 import StarRating from '../../StarRating';
 
 const SingleReview = function (props) {
-    console.log(props.props)
     // const reviews = require('./894reviews.json')
     const reviews = props.props;
 

@@ -34,31 +34,32 @@ function Detail(showId) {
         setRawReviews(filteredComments);
 
         // TBD temporary comments to test rendering. Replace it.
-        let comments = [{
-          "_id": "6241b56abdb83274dd7e8f89",
-          "showId": "691",
-          "userId": "1",
-          "movieTitle": "Daniel Tiger's Neighborhood",
-          "review": "Great tv show. It is has some music, content related to family, shool and friends/neighborhood.",
-          "rating": 8,
-          "__v": 0,
-          "ages": ["4", "5"],
-          "tags": ["Interactive", "Communication skills", "Life changes", "Kindness", "School"]
-        },
+        let comments = filteredComments;        
+        // let comments = [{
+        //   "_id": "6241b56abdb83274dd7e8f89",
+        //   "showId": "691",
+        //   "userId": "1",
+        //   "movieTitle": "Daniel Tiger's Neighborhood",
+        //   "review": "Great tv show. It is has some music, content related to family, shool and friends/neighborhood.",
+        //   "rating": 8,
+        //   "__v": 0,
+        //   "ages": ["4", "5"],
+        //   "tags": ["Interactive", "Communication skills", "Life changes", "Kindness", "School"]
+        // },
 
-        {
-          "_id": "6241b56ghtb83274dd7e8f89",
-          "showId": "691",
-          "userId": "2",
-          "movieTitle": "Daniel Tiger's Neighborhood",
-          "review": "Talk about a lot of good habits. Interesting to watch toghether and talk about some real-life issues. For instance, going to a doctor, vaccine, first day at school, sibling arrival etc.",
-          "rating": 9,
-          "__v": 0,
-          "ages": ["3", "4", "5"],
-          "tags": ["Musical", "Communication skills", "Emotional skills", "Family"]
-        }
-        ]
-        setRawReviews(comments);
+        // {
+        //   "_id": "6241b56ghtb83274dd7e8f89",
+        //   "showId": "691",
+        //   "userId": "2",
+        //   "movieTitle": "Daniel Tiger's Neighborhood",
+        //   "review": "Talk about a lot of good habits. Interesting to watch toghether and talk about some real-life issues. For instance, going to a doctor, vaccine, first day at school, sibling arrival etc.",
+        //   "rating": 9,
+        //   "__v": 0,
+        //   "ages": ["3", "4", "5"],
+        //   "tags": ["Musical", "Communication skills", "Emotional skills", "Family"]
+        // }
+        // ]
+        // setRawReviews(comments);
 
 
         // Processes all ages included in any review in compiled variable
@@ -142,7 +143,6 @@ function Detail(showId) {
     // </APIContextProvider>
 
     <div>
-Inside Detail
       {/* <ShowData data={[publicData, rawReviews, computedData]} /> */}
       <CompiledInfo props={[publicData, rawReviews, computedData]}/>
       <Reviews props={[publicData, rawReviews, computedData]}/>

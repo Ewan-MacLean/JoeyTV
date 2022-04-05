@@ -5,14 +5,13 @@ import {Card} from 'react-bootstrap'
 const CompleteTags = function (props) {
     // const summaryData = require('./894summary.json')
     const summaryData = props.props[2];
-    console.log(summaryData)
     let countReviews = summaryData.countReviews;
     let items = [];
     for (let p in summaryData.tagsObj) {
             let progress = (100*summaryData.tagsObj[p]/countReviews);
-            items.push(<p>{p}
+            items.push(<div key={p}>{p}
                 <ProgressBar animated now={progress}/>
-            </p>)
+            </div>)
         
     }
 
@@ -20,7 +19,7 @@ const CompleteTags = function (props) {
     return (
         <Card>
             <Card.Header as="h2">All tags</Card.Header>
-            <Card.Text>{items}</Card.Text>
+            {items}
 
         </Card>
     )
