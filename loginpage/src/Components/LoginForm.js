@@ -22,14 +22,19 @@ const LoginForm = () => {
         event.preventDefault();
 
         //Take input, compare to (mock) database
-        var { uname, pass } = document.forms[0];
+        var { uname, pass } = document.forms["login"];
         const userData = database.find((user) => user.username === uname.value);
 
         if (userData) {
-            setErrorMessages({ name: "uname", message: "User already exists." });
-        } else {
-            //Some code here to add user to database...
-            database.push({uname, pass});
+            if (userData.password !== pass.value) {
+              // Invalid password
+              setErrorMessages({ name: "pass", message: "Invalid password." });
+            } else {
+              setIsSubmitted(true);
+            }
+          } else {
+            // Username not found
+            setErrorMessages({ name: "uname", message: "User does not exist." });
         }
     };
 
@@ -42,7 +47,7 @@ const LoginForm = () => {
     // JSX code for sign up form
     const renderForm = (
         <div className="form">
-            <form onSubmit={handleSubmit}>
+            <form name= "login" onSubmit={handleSubmit}>
                 <div className="input-container">
                     <label>Username </label>
                     <input type="text" name="uname" required />
@@ -65,8 +70,8 @@ const LoginForm = () => {
 
     return(
         <div className="signup-form">
-            <div className="title">Sign Up</div>
-            {isSubmitted ? <div>User Has successfully n</div> : renderForm}
+            <div className="title">Log In</div>
+            {isSubmitted ? <div>User Has successfully signed in.</div> : renderForm}
         </div>
     );
 }

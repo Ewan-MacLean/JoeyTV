@@ -22,16 +22,13 @@ const SignupForm = () => {
         event.preventDefault();
 
         //Take input, compare to (mock) database
-        var { email, uname, pass1, pass2 } = document.forms[0];
+        var {uname, pass1, pass2 } = document.forms["signup"];
         const userData = database.find((user) => user.username === uname.value);
 
         if (userData) {
             setErrorMessages({ name: "uname", message: "User already exists." });
-        } //else if (){
-        //check email validity too tired to code rn
-        //setErrorMessages({ name: "email", message: "Invalid email address." });
-        //} 
-        else if (pass1 !== pass2){
+        } 
+        else if (pass1.value !== pass2.value){
             setErrorMessages({ name: "pass2", message: "Please check that password matches." });
         }
         else {
@@ -50,12 +47,7 @@ const SignupForm = () => {
     // JSX code for sign up form
     const renderForm = (
         <div className="form">
-            <form onSubmit={handleSubmit}>
-                <div className="input-container">
-                    <label>Email </label>
-                    <input type="text" name="email" required />
-                    {renderErrorMessage("uname")}
-                </div>
+            <form name="signup" onSubmit={handleSubmit}>
                 <div className="input-container">
                     <label>Username </label>
                     <input type="text" name="uname" required />
@@ -89,3 +81,18 @@ const SignupForm = () => {
 }
 
 export default SignupForm;
+
+/* Cut Email functionality code:
+
+//else if (){
+        //check email validity too tired to code rn
+        //setErrorMessages({ name: "email", message: "Invalid email address." });
+        //} 
+
+                <div className="input-container">
+                    <label>Email </label>
+                    <input type="text" name="email" required />
+                    {renderErrorMessage("uname")}
+                </div>
+
+*/

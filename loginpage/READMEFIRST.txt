@@ -1,0 +1,1 @@
+These components can be tested in the App.js. Run as usual for react. Replace components to test. Implement wherever needed.
